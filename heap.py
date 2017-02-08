@@ -53,18 +53,19 @@ m6=Matrix ([[1,2,3],[4,5,6],[7,8,9]])
 m7=m5*m6
 print(m7.a)
 		'''
-# Heap Sort		
-class Heap:
+# Priority Queue
+
+class PriorityQueue:
 	def __init__(self,a):
-	        self.a=a
-	        self.b=a
+		self.a=a
+		self.b=a[:]
+		self.build_maxheap()
 	def parent(self,i):
 		return (i-1)//2
 	def left (self,i):
 		return (2*i+1)
 	def right (self,i):
 		return (2*i+2)
-
 	def maxheap(self,i):
 		l=self.left(i)
 		r=self.right(i)
@@ -75,19 +76,31 @@ class Heap:
 			lar=r
 		if lar != i:
 			self.a[i],self.a[lar]=self.a[lar],self.a[i]
-		self.maxheap(lar)
-		
+			self.maxheap(lar)
 	def build_maxheap(self):
-		for i in range ((len(self.b)//2)-1,-1,-1):
+		for i in range ((len(self.a)//2)-1,-1,-1):
 			self.maxheap(i)
-			
-			
-				
-				
-o=Heap([2,4,5,1,8,0,1])
-o.build_maxheap()
-print(o.a)
-		
-		
+
+	def maximum(self):
+		print self.a[0]
+	def removemax(self):
+		self.a[0],self.a[len(self.a)-1]=self.a[len(self.a)-1],self.a[0]
+		print 'removed element ',self.a[(len(self.a)-1)]
+		self.a.pop()
+		self.build_maxheap()
+	def insert(self,x):
+		self.a.append(x)
+		self.build_maxheap()
+
+
+
+
+ob=PriorityQueue([5,4,61,985,34,96,4,12,3,4,1,0,3])
+print ob.a
+ob.maximum()
+ob.removemax()
+print ob.a
+ob.insert(99)
+print ob.a
 		
 		
