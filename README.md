@@ -4,3 +4,4 @@
 3. Learned about function and operator overloading and priority queue using heap
 4. Implementation of stretchable array in python
 5. Binary Search Tree
+6. Red Black Tree
