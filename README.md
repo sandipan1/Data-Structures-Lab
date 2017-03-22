@@ -5,3 +5,4 @@
 4. Implementation of stretchable array in python
 5. Binary Search Tree
 6. Red Black Tree
+7. Make a compiler that does operation on numbers
