@@ -19,6 +19,12 @@ class statement:
 		self.line=line
 		
 
+>>> import re
+>>> # Splitting on: , <space> - ! ? :
+>>> filter(None, re.split("[, \-!?:]+", "Hey, you - what are you doing here!?"))
+['Hey', 'you', 'what', 'are', 'you', 'doing', 'here']
 
+>>> re.split('\W+', 'Words, words, words.')
+['Words', 'words', 'words', '']
 
 		
